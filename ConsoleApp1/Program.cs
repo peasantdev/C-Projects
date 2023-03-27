@@ -11,6 +11,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Package Express");
+            //Request the weight and compares it to a max weight.
             Console.WriteLine("Please enter the package weight:");
             int packageweight = Convert.ToInt32(Console.ReadLine());
             
@@ -19,7 +20,7 @@ namespace ConsoleApp1
                 {
                 Console.WriteLine("Your package is too heavy to be delivered!");
                 }
-
+            //Request for other size information.
             Console.WriteLine("Please enter the package width:");
             int packagewidth = Convert.ToInt32(Console.ReadLine());
 
@@ -28,13 +29,13 @@ namespace ConsoleApp1
 
             Console.WriteLine("Please enter the package length:");
             int packagelength = Convert.ToInt32(Console.ReadLine());
-
+            //Formula for total dimensions for the package.
             int totaldimension = 50;
             if (packagewidth + packageheight + packagelength > totaldimension)
             {
                 Console.WriteLine("Your package is too large to deliver!");
             }
-
+            //Formula for the quote
             int package = (packagewidth * packageheight * packagelength);
             decimal quote = (package * packageweight / 100 + 0.00m);
             Console.WriteLine("Your estimated total for shipping this package is: $" + quote + " Thank You!");
